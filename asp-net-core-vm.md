@@ -22,6 +22,8 @@ You can verify the version of the runtime using the following command
 dotnet --info
 ```
 
+### 2. Enabling Kestrel as a web server
+
 Once ASP.NET Core Runtime is installed we are ready to move forward with the web app.
 As we are going to use Kestrel as a web server we need to allow it to bind on port 433. Let's do this with the following command:
 ```
@@ -49,4 +51,16 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 
 [Install]
 WantedBy=multi-user.target
+```
+
+Let's put this file to `/etc/systemd/system/kestrel-app.service`. Once we have the file in place we can install and start the service:
+```
+sudo systemctl daemon-reload && \
+systemctl enable kestrel-app && \
+systemctl start kestrel-app
+```
+
+Check the status of the service using the following command:
+```
+sudo systemctl status kestrel-app
 ```
