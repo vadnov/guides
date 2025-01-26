@@ -15,6 +15,6 @@ sudo apt install nginx
 ```
 sudo ufw status
 ```
-will give you a status. If it is inactive you can skip this section/
+will give you a status. If it is inactive you can skip this section.
 
 
